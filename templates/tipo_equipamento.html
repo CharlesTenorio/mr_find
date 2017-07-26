@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% from "_macro.html" import mostra_campos %}
+
+ <form name="TipoEquipamento" id="frmTipoEquipamento" method="POST">
+
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+             {{ mostra_campos(frm_tipo_equipamento.nome, class='form-control') }}
+            <p class="help-block text-danger"></p>
+
+        </div>
+
+
+     <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+              {{ mostra_campos(frm_tipo_equipamento.inativo) }}
+            <p class="help-block text-danger"></p>
+
+        </div>
+    </div>
+
+ </div>
+    <div id="sucesso"></div>
+    <div class="form-group col-xs-12">
+        <button type="submit" class="btn-default">Salvar</button>
+    </div>
+
+    </form>
+
+
+
+{% endblock %}
